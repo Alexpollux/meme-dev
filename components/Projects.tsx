@@ -8,7 +8,7 @@ const projects = [
     name: 'Maison Leroux',
     description: 'Site vitrine premium pour un domaine viticole. Mise en avant des cuvées, des valeurs du domaine et prise de contact.',
     tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-    github: 'https://github.com/Alexpollux/MaisonLeroux',
+    github: 'https://github.com/Alexpollux/maison-leroux',
     demo: 'https://maison-leroux.vercel.app/',
   },
   {

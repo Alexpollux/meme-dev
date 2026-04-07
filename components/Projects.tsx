@@ -58,11 +58,11 @@ export default function Projects() {
               <p className="text-sm text-zinc-600 leading-relaxed flex-1 mb-5">
                 {project.description}
               </p>
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-1.5 mb-6">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-medium bg-zinc-100 text-zinc-600 px-2.5 py-1 rounded-md"
+                    className="text-xs font-medium bg-zinc-100 text-zinc-600 px-2 py-1 rounded-md whitespace-nowrap"
                   >
                     {tag}
                   </span>

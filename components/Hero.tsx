@@ -1,9 +1,18 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 
 export default function Hero() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-16">
       <div className="max-w-5xl w-full mx-auto">
@@ -41,11 +50,11 @@ export default function Hero() {
         </motion.div>
       </div>
 
+      {/* Flèche : cachée sur mobile, disparaît au scroll sur desktop */}
       <motion.div
-        className="absolute bottom-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.6 }}
+        className="absolute bottom-10 hidden md:block"
+        animate={{ opacity: scrolled ? 0 : 1 }}
+        transition={{ duration: 0.3 }}
       >
         <a href="#projets" className="text-zinc-400 hover:text-zinc-600 transition-colors">
           <ArrowDown size={20} />
